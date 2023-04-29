@@ -153,8 +153,8 @@ n = 100
 images = np.array([load_image(img) for img in tqdm(uniq_img_names[:n])])
 masks = np.array([load_mask(img) for img in tqdm(uniq_img_names[:n])])
 
-param_grid = {'eps': [2.5],#, 3, 3.5, 4, 4.5, 5, 5.5, 6, 6.5],
-                  'min_samples': [250]}#, 300, 350, 400, 450, 500, 550, 600]}
+param_grid = {'eps': [2.5, 3, 3.5, 4, 4.5, 5, 5.5, 6, 6.5],
+                  'min_samples': [250,300, 350, 400, 450, 500, 550, 600]}
 
 
 for i in range(n):
