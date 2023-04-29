@@ -115,10 +115,6 @@ def load_img_from_file(file_name):
     data_2d = np.loadtxt(file_name, delimiter=',')
     # reshape the 2D array to a 3D array with shape (200, 200, 3)
     data_3d = data_2d.reshape((200, 200, -1))
-
-    # print the shape of the 3D array to verify that it's correct
-    #print(data_3d.shape)
-    #display([data])
     return data_3d
 
 def get_unprocessed_images(processed_images_path, all_images_names):
@@ -147,8 +143,8 @@ images = np.array([load_image(img) for img in (uniq_img_names[:n])])
 masks = np.array([load_mask(img) for img in (uniq_img_names[:n])])
 
 for i in range(n):
+    img = images[i] 
     #img = blur_img(images[i])
-    img = images[i] #with_out_blur
 
     optimal_k = get_optimal_k(img, masks[i])
 
